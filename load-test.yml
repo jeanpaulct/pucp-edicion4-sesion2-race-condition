@@ -1,0 +1,11 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 1
+      arrivalRate: 20
+      name: "Ráfaga de Concurrencia"
+scenarios:
+  - name: "Intento de compra simultánea"
+    flow:
+      - post:
+          url: "/api/buy"
